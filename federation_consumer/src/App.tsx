@@ -3,6 +3,7 @@ import React, { Suspense, lazy } from 'react';
 import './App.css';
 // The remote component provided by federation_provider
 import ProviderButton from 'federation_provider/button';
+import SampleApp from 'sample_module/App';
 import { init, loadRemote } from '@module-federation/enhanced/runtime';
 
 init({
@@ -39,6 +40,7 @@ const App = () => {
       <p>Start building amazing things with Rsbuild.</p>
       <div>
         <ProviderButton />
+        <SampleApp />
       </div>
     </div>
   );
