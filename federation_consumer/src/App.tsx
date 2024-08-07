@@ -19,6 +19,19 @@ loadRemote('federation_provider/button').then(() =>{
   console.log("loaded")
 });
 
+init({
+  name: 'federation_consumer',
+  remotes: [
+    {
+      name: 'sample_module',
+      entry: 'http://localhost:2001/mf-manifest.json',
+      alias: 'sample_module',
+    },
+  ],
+});
+loadRemote('sample_module/App').then(() =>{
+  console.log("loaded sample app")
+});
 const App = () => {
   return (
     <div className="content">
