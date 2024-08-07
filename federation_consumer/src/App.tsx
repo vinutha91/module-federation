@@ -5,6 +5,20 @@ import './App.css';
 import ProviderButton from 'federation_provider/button';
 import { init, loadRemote } from '@module-federation/enhanced/runtime';
 
+init({
+  name: 'federation_consumer',
+  remotes: [
+    {
+      name: 'federation_provider',
+      entry: 'http://localhost:3000/mf-manifest.json',
+      alias: 'federation_provider',
+    },
+  ],
+});
+loadRemote('federation_provider/button').then(() =>{
+  console.log("loaded")
+});
+
 const App = () => {
   return (
     <div className="content">
