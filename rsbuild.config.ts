@@ -20,6 +20,9 @@ export default defineConfig({
       plugins: [
         new ModuleFederationPlugin({
           name: 'federation_provider',
+          remotes: {
+            
+          },
           exposes: {
             './button': './src/button.tsx',
           },

@@ -16,6 +16,9 @@ export default defineConfig({
             federation_provider:
               'federation_provider@http://localhost:3000/mf-manifest.json',
           },
+          exposes: {
+            './App': './src/App.tsx',
+          },
           shared: ['react', 'react-dom'],
         }),
       ],
